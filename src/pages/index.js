@@ -1,9 +1,8 @@
 import React, { useContext, useState, useEffect } from "react"
 import { useStaticQuery, graphql } from 'gatsby'
-import { useWindowHeight } from "../hooks"
+import { isBrowser, useWindowHeight } from "../hooks"
 import { Context } from '../components/context'
 import { PageWrapper } from '../components/layout'
-import { window, document } from 'browser-monads';
 import { NavBar } from '../components/nav'
 import { IoFastFoodSharp, IoCalendar, IoCartSharp, IoStar, IoChatboxEllipses } from 'react-icons/io5'
 import { FaFacebook, FaInstagram, FaTripadvisor } from 'react-icons/fa'
@@ -42,9 +41,11 @@ const Index = () => {
   const [ page, setPage ] = useState('home');
 
   useEffect(()=> {
-    if(window.location.hash === '#menu'){
-      setPage('menu');
-      window.history.pushState('home','Home','/')
+    if(!isBrowser){
+      if(window.location.hash === '#menu'){
+        setPage('menu');
+        window.history.pushState('home','Home','/')
+      }
     }
   }, [])
 
