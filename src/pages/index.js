@@ -127,7 +127,7 @@ const Index = () => {
     >
           {/*<PageWrapper 
       bgImage={pageData.siteID.backgroundImage}
-    bgColor={pageData.siteID.backgroundColor}>*/}
+    bgColor={pageData.siteID.backgroundColor}>
       <NavBar
         display={context.display}
         logo={context.display === 'mobile' ? pageData.siteID.mobileLogo : pageData.siteID.logo}
@@ -150,7 +150,7 @@ const Index = () => {
         :
           <Home/>
         }
-      </div>
+      </div>*/}
 
 
     </div>
