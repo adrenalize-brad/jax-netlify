@@ -120,10 +120,14 @@ const Index = () => {
 
   return(
 
-    <PageWrapper 
-      bgImage={pageData.siteID.backgroundImage}
-      bgColor={pageData.siteID.backgroundColor}
+
+    <div
+      id="page-wrapper"
+      className="fixed top-0 left-0 w-full h-full bg-black"
     >
+          {/*<PageWrapper 
+      bgImage={pageData.siteID.backgroundImage}
+    bgColor={pageData.siteID.backgroundColor}>*/}
       <NavBar
         display={context.display}
         logo={context.display === 'mobile' ? pageData.siteID.mobileLogo : pageData.siteID.logo}
@@ -149,7 +153,7 @@ const Index = () => {
       </div>
 
 
-    </PageWrapper>
+    </div>
 
   )
 
